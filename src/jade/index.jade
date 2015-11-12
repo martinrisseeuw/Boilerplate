@@ -1,8 +1,24 @@
-include ./header.jade
-header.box
-  p This is Martin's boiler plate
-main
-  p It's simple and easy
-footer
-  p It makes use of Jade, Stylus, Gulp
-  button haha
+extends ./layout.jade
+block pageVars
+  -var pageTitle = "Welcone - Open UI Components"
+block content
+  .wrapper
+    h1 Welcome to Open-UI components
+    p.
+      You can find this project on <a href="https://github.com/martinrisseeuw/Boilerplate">GitHub</a>
+    h3 Tools used for this project
+    ul
+      li Jade
+      li Stylus
+      li Javascript
+      li Gulp
+      li gulp-inject
+      li gulp-autoprefixer
+      li gulp-minifyCSS
+      li gulp-changed
+      li gulp-imagemin
+      li gulp-rename
+      li gulp-concat
+      li jshint 
+      li uglify
+      li browserSync

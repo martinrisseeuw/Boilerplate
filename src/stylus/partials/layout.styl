@@ -1,36 +1,35 @@
-main
-  padding small-percentage
-  
-.paper 
-  background-color #FFFEFF
-  width 500px
-  height 100px
-  overflow hidden
-  position relative
-  margin-bottom 16px
-  box-shadow 0px 1px 2px 1px #D3D2D3
-  border-radius 2px
-  transition 0.1s ease-in
-  user-select none
-  &:hover
-    cursor pointer
+.two-col
+  width 50%
+.three-col
+  width 33.3333%
+.four-col
+  width 25%
+.five-col
+  width 20%
+.cardSection.color
+  padding 8%
+.wrapper
+  max-width wrapperWidth
+  margin auto
+  img
+    max-width 100%
+pre
+  background darkGrey
+  color white
+  border-radius 4px
+  padding 2%
+  max-width 600px
+  white-space pre-wrap
+  font-family monospace
+  margin-bottom 2em
 
-#num 
-  font-family 'Roboto', sans-serif
-  font-size 28px
-  color #999
-  text-align center
-  margin-top 32px
+.flex
+  display flex
+  flex-flow wrap
+  article
+    flex-grow 1
 
-.ripple 
-  background-color rgba(0, 0, 0, 0.05)
-  border-radius 100%
-  height 100px
-  width 100px
-  margin-top -90px
-  position relative
-  transform scale(0)
-
-
-.animate 
-  animation ripple 0.4s linear
+@media only screen and (max-width: 375px) and (-webkit-min-device-pixel-ratio : 2)
+  .main-content
+    .wrapper
+      padding 30px

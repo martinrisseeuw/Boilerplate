@@ -7,8 +7,10 @@ html
 	font-smoothing antialiased
 
 body
-	font-family sans-serif
-	color darkGrey
+  font-family projectFont
+  font-weight projectFontThickness
+  font-size projectFontSize
+  color darkGrey
 
 h1, .alpha,
 h2, .beta,
@@ -17,6 +19,7 @@ h4, .delta,
 h5, .epsilon,
 h6, .zeta 
   margin 0
+  font-weight bold
 
 h1, .alpha 
   font-size 2.625em
@@ -64,10 +67,11 @@ li
 a
   text-decoration none
   opacity 1
-  transition opacity 0.3s ease-in-out
+  color defaultLinkColor
+  transition opacity 0.1s ease-out
 
 a:hover
-  opacity 0.8
+  opacity hoverOpacity
 
 input, select, button, textarea, .btn
 	font-size 1.3125em
