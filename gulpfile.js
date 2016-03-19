@@ -36,7 +36,8 @@ gulp.task('htmlmodules', function() {
 
 gulp.task('js', function() {
   gulp.src([
-    'bower_components/jquery/dist/jquery.js'
+    'bower_components/es6-promise/es6-promise.min.js',
+    'bower_components/fetch/fetch.js'
   ])
     // concat pulls all our files together before minifying them
     .pipe( concat('output.min.js') )
@@ -45,7 +46,7 @@ gulp.task('js', function() {
 });
 
 
-gulp.task('scripts', function(){ 
+gulp.task('scripts', function(){
     var target = gulp.src('src/jade/header.jade');
     var sources = gulp.src(['src/scripts/*.js'], {read: false});
     var exportString = 'public/js';
@@ -57,8 +58,6 @@ gulp.task('scripts', function(){
     .pipe(gulp.dest('src/jade/'))
 		.pipe(browserSync.reload({stream:true}))
 });
-
-
 
 gulp.task('copy', function(){
   gulp.src('src/scripts/*.js')
@@ -80,6 +79,7 @@ gulp.task('watch', function () {
    gulp.watch('src/scripts/*.js', ['html', 'scripts']);
 });
 
+
 gulp.task('browser-sync', function() {
   browserSync({
     server: {
@@ -88,5 +88,5 @@ gulp.task('browser-sync', function() {
   });
 });
 
-gulp.task('default', ['css', 'scripts', 'copy', 'html', 'htmlmodules', 'js']);
+gulp.task('default', ['css', 'scripts', 'copy', 'html', 'htmlmodules', 'jshint', 'js']);
 gulp.task('start', ['browser-sync', 'watch']);
