@@ -37,10 +37,11 @@ gulp.task('htmlmodules', function() {
 gulp.task('js', function() {
   gulp.src([
     'bower_components/es6-promise/es6-promise.min.js',
-    'bower_components/fetch/fetch.js'
+    'bower_components/fetch/fetch.js',
+    'bower_components/velocity/velocity.min.js'
   ])
     // concat pulls all our files together before minifying them
-    .pipe( concat('output.min.js') )
+    .pipe(concat('output.min.js'))
     .pipe(uglify())
     .pipe(gulp.dest('build/public/js'))
 });
@@ -76,7 +77,7 @@ gulp.task('watch', function () {
    gulp.watch('src/stylus/**/*.styl', ['css']);
    gulp.watch('src/jade/*.jade', ['html']);
    gulp.watch('src/jade/modules/*.jade', ['html']);
-   gulp.watch('src/scripts/*.js', ['html', 'scripts']);
+   gulp.watch('src/scripts/*.js', ['scripts', 'copy', 'html']);
 });
 
 
